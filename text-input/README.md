@@ -1,3 +1,10 @@
+# TextInput React Component
+
+## Inštalácia
+
+```bash
+npm install text-input
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

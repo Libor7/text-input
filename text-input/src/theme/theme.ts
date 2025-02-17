@@ -2,7 +2,7 @@
 import { createTheme } from "@mui/material/styles";
 
 /** STYLES */
-import { RADIUS } from "@src/components/UI/text-input/styles";
+import { RADIUS } from "@src/components/TextInput/styles";
 
 export const theme = createTheme({
   components: {

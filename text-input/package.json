@@ -1,13 +1,17 @@
 {
   "name": "text-input",
-  "private": true,
-  "version": "0.0.0",
+  "private": false,
+  "version": "1.0.0",
   "type": "module",
+  "main": "dist/text-input.umd.js",
+  "module": "dist/text-input.es.js",
+  "types": "dist/text-input.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "npm run build"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

@@ -1,5 +1,5 @@
 /** CUSTOM COMPONENTS */
-import TextInput from "@src/components/UI/text-input/TextInput";
+import TextInput from "@src/components/TextInput/TextInput";
 
 const DUMMY_VALIDATION_HANDLERS = [
   (value: string) => value.length > 4,

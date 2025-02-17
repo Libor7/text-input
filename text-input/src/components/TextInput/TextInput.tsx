@@ -1,17 +1,20 @@
 /** COMPONENTS */
 import { type TextFieldProps } from "@mui/material/TextField";
 
-/** HELPERS */
-import { ARIA_LABEL_GENERIC, ERROR_MESSAGE_GENERIC } from "./constants";
-
 /** LIBRARIES */
+import { ThemeProvider } from "@mui/material/styles";
 import { type FC, useCallback, useState } from "react";
 
 /** TYPES */
 import { type ITextInputProps, type IValidationHandlers } from "./types";
 
 /** STYLES */
+import CssBaseline from "@mui/material/CssBaseline";
 import { StyledTextInput } from "./styles";
+import { theme } from "@src/theme/theme";
+
+const ARIA_LABEL_GENERIC = "The value is not valid";
+const ERROR_MESSAGE_GENERIC = "The value is not valid";
 
 const TextInput: FC<
   TextFieldProps & Partial<ITextInputProps> & IValidationHandlers
@@ -47,19 +50,22 @@ const TextInput: FC<
   );
 
   return (
-    <StyledTextInput
-      {...otherProps}
-      aria-label={ariaLabel}
-      colorvariant={inValid ? "danger" : colorVariant}
-      error={inValid}
-      fullWidth
-      helperText={inValid ? errorMsg : null}
-      onBlur={blurHandler}
-      onChange={changeHandler}
-      spacing={spacing}
-      typography={typography}
-      variant={variant}
-    />
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <StyledTextInput
+        {...otherProps}
+        aria-label={ariaLabel}
+        colorvariant={inValid ? "danger" : colorVariant}
+        error={inValid}
+        fullWidth
+        helperText={inValid ? errorMsg : null}
+        onBlur={blurHandler}
+        onChange={changeHandler}
+        spacing={spacing}
+        typography={typography}
+        variant={variant}
+      />
+    </ThemeProvider>
   );
 };
 
